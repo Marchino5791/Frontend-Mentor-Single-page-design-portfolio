@@ -1,0 +1,52 @@
+@use "variables" as *;
+@use "mixin" as mix;
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+
+    @include mix.breakpoint(tablet) {
+        font-size: 3rem;
+    }
+
+    @include mix.breakpoint(phone) {
+        font-size: 2.5rem;
+    }
+}
+
+h2 {
+    font-size: 2.5rem;
+
+    @include mix.breakpoint(tablet) {
+        font-size: 2.25rem;
+    }
+
+    @include mix.breakpoint(phone) {
+        font-size: 1.825rem;
+    }
+}
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: $m-smaller;
+
+    @include mix.breakpoint(phone) {
+        font-size: 1.75rem;
+    }
+}
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: $secondary-text;
+}
+
+.white {
+    color: $bg;
+}
+
+.skill__title {
+    font-size: 1.5rem;
+    color: $bg;
+    line-height: 1.875rem;
+}

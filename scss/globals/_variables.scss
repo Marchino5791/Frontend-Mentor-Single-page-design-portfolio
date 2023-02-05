@@ -1,0 +1,31 @@
+// typography
+$font: 'Plus Jakarta Sans', sans-serif;
+
+// margin
+$m-smallest: 2.5rem;
+$m-smaller: 3.5rem;
+$m-small: 4rem;
+$m-medium: 5rem;
+
+//radius
+$rounded-corner: 8px;
+$circle: 50%;
+
+// color
+$bg: hsla(30, 100%, 97%, 1);
+$primary-text: hsla(0, 0%, 1%, 1);
+$secondary-text: hsla(30, 5%, 45%, 1);
+$blue: hsla(252, 66%, 62%, 1);
+$yellow: hsla(28, 89%, 67%, 1);
+$pink: hsla(0, 79%, 79%, 1);
+$red: hsla(7, 77%, 66%, 1);
+$cyan:hsla(172, 46%, 57%, 1);
+$purple: hsla(314, 46%, 23%, 1);
+
+
+$breakpoints-up: (
+    "laptop": 64em,
+    "tablet": 48em,
+    "phone": 38em,
+    "reduce-fonts": 28em
+);

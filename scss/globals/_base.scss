@@ -1,0 +1,149 @@
+@use "variables" as *;
+@use 'mixin' as mix;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    @include mix.breakpoint(tablet) {
+        font-size: 93.75%;
+    }
+
+    @include mix.breakpoint(reduce-fonts) {
+        font-size: 87.5%;
+    }
+}
+
+body {
+    font-family: $font;
+    background-color: $bg;
+    margin-top: $m-smallest;
+}
+
+// template
+.free-box {
+    @include mix.space-betw;
+    align-items: center;
+    margin-bottom: $m-small;
+}
+
+header,
+footer {
+    @include mix.margin-center(75%);
+
+    @include mix.breakpoint(laptop) {
+        width: 95%;
+    }
+
+}
+
+.hard-skills-box {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 8.5rem;
+
+    @include mix.breakpoint(tablet) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        margin-bottom: 8rem;
+    }
+
+    @include mix.breakpoint(phone) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        margin-bottom: 7.5rem;
+    }
+}
+
+.about-me-box {
+    @include mix.grid-2-column;
+    margin-bottom: $m-medium;
+
+    &__img {
+        width: 85%;
+
+        @include mix.breakpoint(tablet) {
+            width: 100%;
+        }
+
+        @include mix.breakpoint(phone) {
+            width: 90%;
+        }
+
+        img {
+            width: 100%;
+
+            @include mix.breakpoint(tablet) {
+                transform: translateX(-15%);
+            }
+
+            @include mix.breakpoint(phone) {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__text {
+        *:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    @include mix.breakpoint(phone) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+        row-gap: 2.5rem;
+    }
+}
+
+.work {
+    margin-bottom: $m-medium;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+
+    &__slideshow {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        justify-content: center;
+        gap: 1.875rem;
+        margin-bottom: $m-smaller;
+    }
+}
+
+.cta-box {
+    @include mix.grid-2-column;
+    padding: $m-small $m-medium;
+    justify-items: end;
+    border-radius: $rounded-corner;
+    background-color: $primary-text;
+    color: $bg;
+    margin-bottom: $m-smaller;
+
+    h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    @include mix.breakpoint(tablet) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    @include mix.breakpoint(phone) {
+        padding: $m-smaller $m-smallest;
+    }
+}
